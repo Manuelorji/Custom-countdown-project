@@ -100,7 +100,10 @@ button:hover {
 
 ul {
   display: flex;
-  justify-content: space-around;
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
 }
 
 li {
@@ -109,7 +112,7 @@ li {
   text-align: center;
   font-size: 15px;
   list-style: none;
-  padding: 10px;
+  padding: 10px 20px;
   text-transform: uppercase;
 }
 

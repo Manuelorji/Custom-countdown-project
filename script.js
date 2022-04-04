@@ -55,6 +55,21 @@ function updateDOM() {
       timeElements[1].textContent = `${hours}`;
       timeElements[2].textContent = `${minutes}`;
       timeElements[3].textContent = `${seconds}`;
+      if (seconds < 10) {
+        timeElements[3].textContent = `0${seconds}`;
+      }
+
+      if (minutes < 10) {
+        timeElements[2].textContent = `0${minutes}`;
+      }
+
+      if (hours < 10) {
+        timeElements[1].textContent = `0${hours}`;
+      }
+
+      if (days < 10) {
+        timeElements[0].textContent = `0${days}`;
+      }
       completeEl.hidden = true;
       countdownEl.hidden = false;
     }
