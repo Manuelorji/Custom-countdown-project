@@ -89,7 +89,7 @@ function updateCountdown(e) {
   localStorage.setItem("countdown", JSON.stringify(savedCountdown));
   console.log(countdownTitle, countdownDate);
   // Check for valid date
-  if ((countdownDate === "" || countdownTitle) === "") {
+  if (countdownDate === "" || countdownTitle === "") {
     alert("Please fill all the inputs.");
   } else {
     //   Get number version of current Date, updateDom
