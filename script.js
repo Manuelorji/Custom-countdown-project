@@ -79,24 +79,22 @@ function updateDOM() {
 // Takes values from form input
 function updateCountdown(e) {
   e.preventDefault();
+  // Check for valid date
+  if (countdownDate === "" || countdownTitle === "") {
+    return alert("Please fill all the inputs.");
+  }
   countdownTitle = e.srcElement[0].value;
   countdownDate = e.srcElement[1].value;
   savedCountdown = {
     title: countdownTitle,
     date: countdownDate,
   };
-  console.log(savedCountdown);
   localStorage.setItem("countdown", JSON.stringify(savedCountdown));
   console.log(countdownTitle, countdownDate);
-  // Check for valid date
-  if (countdownDate === "" || countdownTitle === "") {
-    alert("Please fill all the inputs.");
-  } else {
-    //   Get number version of current Date, updateDom
-    countdownValue = new Date(countdownDate).getTime();
-    console.log("countdown value:", countdownValue);
-    updateDOM();
-  }
+
+  //   Get number version of current Date, updateDom
+  countdownValue = new Date(countdownDate).getTime();
+  updateDOM();
 }
 
 // Reset All Values
