@@ -79,12 +79,14 @@ function updateDOM() {
 // Takes values from form input
 function updateCountdown(e) {
   e.preventDefault();
+
+  countdownTitle = e.srcElement[0].value;
+  countdownDate = e.srcElement[1].value;
   // Check for valid date
   if (countdownDate === "" || countdownTitle === "") {
     return alert("Please fill all the inputs.");
   }
-  countdownTitle = e.srcElement[0].value;
-  countdownDate = e.srcElement[1].value;
+
   savedCountdown = {
     title: countdownTitle,
     date: countdownDate,
@@ -106,8 +108,8 @@ function reset() {
   //   Stop the countdown
   clearInterval(countdownActive);
   //   Reset values
-  countdownTitle = "";
-  countdownDate = "";
+
+  countdownForm.reset();
   //   countdownActive = "0";
   localStorage.removeItem("countdown");
 }
